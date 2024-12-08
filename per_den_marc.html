@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Den Marc F. Siapno</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #00ff00;
+            --secondary-color: #ff00ff;
+            --accent-color: #00ffff;
+            --text-color: #ffffff;
+            --background-color: #000000;
+        }
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            font-family: 'Orbitron', sans-serif;
+        }
+        .navbar {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 1rem 0;
+        }
+        .navbar-brand {
+            color: var(--primary-color);
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+        .navbar-nav .nav-link {
+            color: var(--text-color);
+            transition: color 0.3s ease;
+        }
+        .navbar-nav .nav-link:hover {
+            color: var(--accent-color);
+        }
+        .hero {
+            background-image: url('https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExYmxueTZ4eWp6NHYwMHJycHU2MjlteXN0OHNhMHJ0MWd6cHlwbnVrbCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3e5kkipMoPVMAhKxmC/giphy.gif');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            text-shadow: 0 0 10px var(--primary-color);
+        }
+        .hero p {
+            font-size: 1.5rem;
+            text-shadow: 0 0 5px var(--secondary-color);
+        }
+        .section {
+            padding: 5rem 0;
+            background-color: var(--background-color);
+        }
+        .section h2 {
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+        }
+        .card {
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid var(--accent-color);
+            transition: transform 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 20px var(--accent-color);
+        }
+        .card-title {
+            color: var(--primary-color);
+        }
+        .card-text {
+            color: var(--text);
+        }
+        .btn-custom {
+            background-color: var(--primary-color);
+            color: var(--background-color);
+            border: none;
+            padding: 10px 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+        .btn-custom:hover {
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+            box-shadow: 0 0 10px var(--secondary-color);
+        }
+        .cta-section {
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            padding: 5rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: repeating-linear-gradient(
+                0deg,
+                transparent,
+                transparent 20px,
+                rgba(255, 255, 255, 0.1) 20px,
+                rgba(255, 255, 255, 0.1) 40px
+            );
+            animation: move-background 10s linear infinite;
+        }
+        @keyframes move-background {
+            0% {
+                transform: translateX(0) translateY(0);
+            }
+            100% {
+                transform: translateX(50px) translateY(50px);
+            }
+        }
+        .cta-content {
+            position: relative;
+            z-index: 1;
+        }
+        .cta-section h2 {
+            color: var(--background-color);
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 10px var(--accent-color);
+        }
+        .cta-section p {
+            color: var(--text-color);
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        .testimonials-section {
+            background-color: var(--background-color);
+            padding: 5rem 0;
+        }
+        .testimonial-card {
+            background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+            border: 1px solid var(--accent-color);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+        }
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 20px var(--accent-color);
+        }
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+        .testimonial-author {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        .testimonial-rating {
+            color: var(--accent-color);
+            font-size: 1.2rem;
+        }
+        .testimonial-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+            border: 2px solid var(--accent-color);
+        }
+        .footer {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: var(--text-color);
+            padding: 2rem 0;
+        }
+        .footer a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+        .footer a:hover {
+            color: var(--primary-color);
+        }
+        h1, h2, h3, h4, h5, h6 {
+            text-shadow: 0 0 5px var(--primary-color), 0 0 10px var(--primary-color), 0 0 15px var(--primary-color);
+        }
+    </style>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Den Marc</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero" id="home">
+        <div class="container hero-content">
+            <h1 class="display-1">Welcome to Den Marc </h1>
+            <p class="lead">Discovering the IT World</p>
+            <a href="#" class="btn btn-custom btn-lg">View Now</a>
+        </div>
+    </section>
+    <section class="section" id="products">
+        <div class="container">
+            <h2>Featured </h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="C:\xampp\htdocs\DENMARC\2507ff29-672f-473f-8d08-4b88e96a3cf0.jfif" class="C:\xampp\htdocs\DENMARC\2507ff29-672f-473f-8d08-4b88e96a3cf0.jfif" alt PC">
+                        <div class="card-body">
+                            <h5 class="card-title">PIZZA ORDERING KIOSK</h5>
+                            <p class="card-text text-white">Enhancing the overall dining experience</p>
+                            <a href="#" class="btn btn-custom">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="C:\xampp\htdocs\DENMARC\466383931_975915874570321_4318081739943578026_n.jpg" class="C:\xampp\htdocs\DENMARC\466383931_975915874570321_4318081739943578026_n.jpg" alt="Gaming Laptop">
+                        <div class="card-body">
+                            <h5 class="card-title">GDG Baguio devfest 2023</h5>
+                            <p class="card-text text-white">Where developers come together to learn, network, and share the latest in technology and innovation</p>
+                            <a href="#" class="btn btn-custom">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="image/gamingaccesories.jpg" class="card-img-top" alt="Gaming Accessories">
+                        <div class="card-body">
+                            <h5 class="card-title">My Gaming PC</h5>
+                            <p class="card-text text-white"> Delivering smooth gameplay and stunning graphics for an immersive gaming experience</p>
+                            <a href="#" class="btn btn-custom">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="cta-section">
+        <div class="container cta-content">
+        </div>
+    </section>
+
+<section class="section" id="about">
+    <div class="container">
+        <h2>About ME</h2>
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExcXYzZHE5Zzd5bjMwNDFzdzB0bjd2Nm9tNHAxZTJpZjg1eThzNHU5eiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/sej0saKEwvuHEbsuJq/giphy.gif" class="img-fluid rounded" alt="Our Workshop">
+            </div>
+            <div class="col-md-6">
+                <p>Hello! My name is DEN MARC F. SIAPNO, and I'm a passionate web developer. With a deep love for technology and problem-solving, I specialize in creating responsive and user-friendly websites. My goal is to blend creativity and functionality to bring digital experiences to life.</p>
+                <p>After earning my degree in BSIT from UNIVERSIDAD DE DAGUPAN, I decided to pursue a career in web development. I am constantly learning new skills and improving my craft, always aiming to deliver the best solutions for my clients and users.</p>
+                <p>When I'm not coding, you can find me Playing pc games. I believe in continuous growth, both professionally and personally, and I'm excited to connect with like-minded individuals to create amazing things together.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>DEN MARC</h5>
+                    <p>Your ultimate humble pupil.  </p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contact Me</h5>
+                    <p>Email: denmarcsiapno04@gmail.com</p>
+                    <p>Phone: #63979661388</p>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center">
+                <p>&copy; 2024 DEN MARC. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
