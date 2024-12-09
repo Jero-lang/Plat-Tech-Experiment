@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="style.css">
+    <title>Student Profile - Jerome R. Orenza</title>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo" data-aos="zoom-in" data-aos-duration="1500">
+                Jerome R. <span>Orenza</span>
+            </div>
+            <div class="links">
+                <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100"><a href="#home">Home</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="200"><a href="#about">About</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300"><a href="#skills">Skills</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="400"><a href="#projects">Projects</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500"><a href="#contact">Contact</a></div>
+            </div>
+            <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
+        </div>
+        <div class="dropdown">
+            <div class="links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+                <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Home Section -->
+    <section id="home">
+        <div class="main-container">
+            <div class="image" data-aos="zoom-out" data-aos-duration="3000">
+                <img src="Jerome.jpg" alt="Student Image">
+            </div>
+            <div class="content">
+                <h1 data-aos="fade-left" data-aos-duration="1500" data-aos-delay="700">Hey, I'm <span>Jerome R. Orenza</span></h1>
+                <div class="typewriter" data-aos="fade-right" data-aos-duration="1500" data-aos-delay="900">I'm a student passionate about <span class="typewriter-text"></span><label for="">|</label></div>
+                <p data-aos="flip-down" data-aos-duration="1500" data-aos-delay="1100">
+                    Student Name : Jerome R. Orenza
+                    Course and Section : 12-ITE-02
+                    Submission Date : December 2024
+                    Instructor Name : Rochelle S. Lanto
+                    </p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/your-profile" target="_blank" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="1600"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/your-profile" target="_blank" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="1700"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://t.me/your-profile" target="_blank" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="1800"><i class="fa-brands fa-telegram"></i></a>
+                </div>
+                <div class="btn" data-aos="zoom-in" data-aos-duration="1500" data-aos-delay="1800">
+                    <button>Get in Touch</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="about-container">
+            <h2 data-aos="fade-up" data-aos-duration="1500">About Me</h2>
+            <p data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100">I am currently studying Information Technology at Universidad de Dagupan, where I am gaining in-depth knowledge of computer systems, programming, and software development. Throughout my academic journey, I have been exposed to various disciplines, including data structures, algorithms, networking, and cybersecurity, which have deepened my understanding of how technology impacts the modern world. My coursework and hands-on projects have allowed me to develop practical skills in coding, system analysis, and problem-solving, while also fostering my passion for continuous learning and innovation in the tech field.</p>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="skills-container">
+            <h2 data-aos="fade-up" data-aos-duration="1500">Skills</h2>
+            <ul data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100">
+                <li>HTML, CSS, JavaScript</li>
+                <li>React, Node.js</li>
+                <li>Python, Java</li>
+                <li>Version Control (Git, GitHub)</li>
+                <li>Responsive Web Design</li>
+                <li>Database Management (MySQL, MongoDB)</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="projects-container">
+            <h2 data-aos="fade-up" data-aos-duration="1500">My Projects</h2>
+            <div class="project-list" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100">
+                <div class="project">
+                    <h3>Personal Portfolio</h3>
+                    <p>A personal portfolio website built using HTML, CSS, and JavaScript to showcase my projects and skills.</p>
+                </div>
+                <div class="project">
+                    <h3>Task Manager App</h3>
+                    <p>A web application built with React and Node.js to manage and track daily tasks efficiently.</p>
+                </div>
+                <div class="project">
+                    <h3>Weather App</h3>
+                    <p>A weather forecasting application built using APIs to provide real-time weather updates.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="contact-container">
+            <h2 data-aos="fade-up" data-aos-duration="1500">Contact Me</h2>
+            <p data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100">Feel free to reach out for collaboration or inquiries. I'm always open to learning new things!</p>
+            <form action="submit_form.php" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2024 Jerome R. Orenza. All Rights Reserved.</p>
+            <div class="social-footer-links">
+                <a href="https://www.facebook.com/your-profile" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.instagram.com/your-profile" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://t.me/your-profile" target="_blank"><i class="fa-brands fa-telegram"></i></a>
+            </div>
+            <p>Designed by Jerome R. Orenza</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({offset: 0});
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
